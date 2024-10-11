@@ -1,15 +1,11 @@
-#e the official NGINX image as the base image
+# Use an official Nginx image as the base image
 FROM nginx:alpine
 
-# Set the working directory to /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
+# Copy your static website files (HTML, CSS, JS) to the Nginx default location
+COPY . /usr/share/nginx/html
 
-# Copy the current directory contents into the container
-COPY . .
+# Expose port 80
+EXPOSE 80
 
-
-# Expose the port defined by the PORT environment variable
-EXPOSE 8080
-
-# Start NGINX
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
