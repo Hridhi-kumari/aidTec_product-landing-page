@@ -9,7 +9,7 @@ COPY . .
 
 
 # Expose the port defined by the PORT environment variable
-EXPOSE 8080
+EXPOSE 80
 
 # Start NGINX
 CMD ["nginx", "-g", "daemon off;"]
